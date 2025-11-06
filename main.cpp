@@ -1,31 +1,36 @@
-#include <iostream> 
+#include <iostream>
 using namespace std;
 
-    
 int main() {
-    for (int i = 1; i <= 6; ++i) {  
-        for (int j = 1; j <= i; ++j) {  
-            cout << "*";  
-        }
-            cout << endl;  
+    int stack[5];
+    int top = -1;
+
+    top++;
+    stack[top] = 10;
+    top++;
+    stack[top] = 20;
+    top++;
+    stack[top] = 30;
+
+    cout << "目前堆疊內容: " << endl;
+    for (int i = 0; i <= top; i++) {
+        cout << stack[i] << " ";
     }
 
-  
+    cout << endl;
 
-    int i;
-    int j;
-    i = 1;
-    while (i <= 9) {
-        cout << i;
-        j = 1;
-        while (j <= 9) {
-            cout << i << " * " << j << " = " << i * j << "\t";
-            j += 1;
-        }
-        cout << endl;
-        i += 1;
+    if (top >= 0) {
+        cout << "彈出元素: " << stack[top] << endl;
+        top--;
+    } else {
+        cout << "堆疊是空的，不能彈出!" << endl;
     }
+
+    cout << "彈出後堆疊內容: " << endl;
+    for (int i = 0; i <= top; i++) {
+        cout << stack[i] << " ";
+    }
+    cout << endl;
 
     return 0;
-
 }
